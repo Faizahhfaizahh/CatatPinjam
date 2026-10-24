@@ -143,10 +143,17 @@ export default function Dashboard({ onLogout }) {
             ) : (
               <ResponsiveContainer width="100%" height={240}>
                 <PieChart>
-                  <Pie data={dataArah} dataKey="total" nameKey="name" outerRadius={90} label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}>
-                    <Cell fill="#0D9488" />
-                    <Cell fill="#FB923C" />
-                  </Pie>
+<Pie
+  data={dataArah}
+  dataKey="total"
+  nameKey="name"
+  innerRadius={55}
+  outerRadius={85}
+  paddingAngle={3}
+>
+  <Cell fill="#0D9488" />
+  <Cell fill="#FB923C" />
+</Pie>
                   <Tooltip formatter={(value) => formatRupiah(value)} />
                   <Legend />
                 </PieChart>
